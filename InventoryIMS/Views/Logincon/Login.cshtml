@@ -1,0 +1,82 @@
+﻿@model InventoryIMS.Models.TblLogin
+  
+<link href="~/css/stylesheet.css" rel="stylesheet" />
+
+
+        @using (Html.BeginForm("Login", "Logincon"))
+        {
+
+            <section class="vh-70 gradient-custom">
+                <div class="container py-5 h-70">
+                    <div class="row d-flex justify-content-center align-items-center h-70">
+                        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+
+                                    <div class="mb-md-5 mt-md-4 pb-5">
+
+                                        <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                                        <p class="text-white-50 mb-5">Please enter your login and password!</p>
+
+                                <span style="font-weight:bolder; font-size:16px; color:darkred;border:black;">@ViewBag.Message</span>
+
+
+                                    <h3>User Login</h3>
+
+                                    <div class="row">
+                                        <div class="mb-md-5 mt-md-4 pb-5">
+                                       
+                                            <lable for="Username">UserName</lable>
+
+                                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+
+
+                                
+                                    @*<div>
+                                           @*<h2>Password</h2>*@
+                                    <div class="row">
+
+                                        <div class="mb-md-5 mt-md-4 pb-5">
+                                                    <lable for="Password">Password</lable>
+
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                        </div>
+                                        <div>
+                                                <input type='submit' value='Login' id='myButton' class=" btn btn-secondary" ion-icon name="log-in-outline " />
+                                            </div>
+                                           </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                
+
+                               
+                                @*<div class="row">
+                                    <div class="form-group col-12">
+                                        <input type='submit' value='Login' id='myButton' class="btn btn-group-lg alert-info" ion-icon name="log-in-outline" />
+                                    </div>
+                                </div>
+                                *@
+                                
+                                   
+   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+
+               
+           </section>
+
+        }
+            
+    
+@*
+        <script>
+                    function redirectOnClick() {
+                        document.location = 'Edits/Index';
+                    }
+
+                </script>
+*@

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<InventoryIMS.Models.TblProduct>
+
+    
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+@* @Html.ActionLink("Logout","Product","ProductCon" )*@
+
+<h6 class=" align-content-lg-start">
+    Welcome @Context.Session.GetString("Username" )
+</h6>
+@*@Context.Session.GetString("Username" )
+*@ 
+
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product_Qty)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Qty)
+                </td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Product_Id">Edit</a> |
+                    <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.Product_Id">Details</a> |
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Product_Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<div class="vertical-center">
+    <a asp-action="Product" class="btn btn-danger a" asp-controller="ProductCon">Logout</a>
+</div>
+
